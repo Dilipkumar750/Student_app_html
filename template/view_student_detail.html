@@ -1,0 +1,26 @@
+{% extends 'student_base.html' %}
+{% load static %}
+{% block content %}
+
+
+<center>
+    <div class="col-12 mt-4 col-md-4">
+        <div class="shadow p-3 text-center">
+            <img class="w-50" src="{% static 'img/user.png' %}" alt="User Image">
+            <p>Name: {{ data.username }}</p>
+            <p>Email: {{ data.email }}</p>
+            <p>Phone No: {{ data.contact }}</p>
+            <p>Class: {{ data.class_name }}</p>
+            <form method="POST">
+                {% csrf_token %}
+                <button class="btn btn-primary">Accept</button>
+            </form>
+        </div>
+    </div>
+</center>
+
+
+{% endblock %}
+
+
+
